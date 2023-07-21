@@ -1,0 +1,15 @@
+@mixin headerFlex($gap) {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin styleFont($weight, $size, $height, $color) {
+  font-style: normal;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  color: $color;
+}
