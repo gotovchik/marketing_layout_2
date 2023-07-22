@@ -164,6 +164,7 @@ a {
   grid-column: 1/span 3;
   height: 180px;
   background: rgba(33, 22, 22, 0.7);
+  max-width: 1140px;
 }
 .offers__title {
   font-style: normal;
