@@ -1,5 +1,14 @@
 @import 'vars';
 @import 'mixins';
+@import 'media';
+@import 'keyframes';
+
+%flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 * {
   margin: 0;
@@ -51,11 +60,14 @@ a {
 }
 
 .burgermenu {
+  z-index: 1000;
+
   &__checkbox {
     position: relative;
   }
 
   &__box {
+    z-index: 1000;
     visibility: hidden;
     position: absolute;
     top: 75px;
@@ -67,6 +79,7 @@ a {
     @include styleFont(400, 14px, normal, #000);
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
     padding: 32px;
+    background-color: #FFF;
   }
 
   &__heading {
@@ -75,13 +88,13 @@ a {
     
   }
 
-  &__link_heading {
-    color: $focusedTextColor;
-  }
-
   &__link {
     color: #6F6E6E;
     margin-left: 20px;
+
+    &_heading {
+      color: $focusedTextColor;
+    }
   }
 
   &__link:hover, &__link_heading:hover {
@@ -97,9 +110,179 @@ a {
   visibility: visible;
 }
 
-@media screen and (max-width: 1324px) {
-  .burgermenu__box {
-    right: 1%;
+.logoblock {
+  display: flex;
+  background-color: #F1E4E6;
+  align-items: center;
+  gap: 64px;
+  
+  &__img {
+    background-color: rgba(113, 103, 105, 0.08);
+    height: 751px;
+  }
+
+  &__heading {
+    @include styleFont(900, 48px, 58px, $blockColor);
+    display: flex;
+    flex-direction: column;
+    border-left: 12px solid $focusedTextColor;
+    padding-left: 16px;
+    height: 92px;
+
+    &_small {
+      @include styleFont(700, 32px, 38px, $blockColor);
+    }
+
+    &_rose {
+      color: $focusedTextColor;
+    }
+  }
+}
+
+.offers {
+  padding-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, $gridWidth);
+  gap: $gridGap;
+  padding-bottom: 96px;
+  min-height: 670px;
+
+  &__card {
+    @extend %flex-column-center;
+    text-align: center;
+    position: relative;
+    height: 260px;
+    background: rgba(33, 22, 22, 0.7) 
+  }
+
+  &__card_big {
+    @extend %flex-column-center;
+    text-align: center;
+    position: relative;
+    grid-column: 1 / span 3;
+    height: 180px;
+    background: rgba(33, 22, 22, 0.7)
+  }
+
+
+  &__title {
+    @include styleFont(400, 16px, 19px, #FFF);
+    position: absolute;
+    &_focused {
+      @include styleFont(700, 24px, 29px, $focusedTextColor);
+    }
+  }
+
+  
+
+  &__img {
+    z-index: -1;
+  }
+}
+
+.featured {
+  @extend %flex-column-center;
+  margin-bottom: 48px;
+
+  &__title {
+    text-align: center
+    
+  }
+  
+  &__heading {
+    @include styleFont(400, 30px, 36px, $blockColor);
+    margin-bottom: 6px;
+  }
+
+  &__text {
+    @include styleFont(400, 14px, 16px, $descriptionTextColor);
+    margin-bottom: 48px;
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: repeat(3, $gridWidth);
+    gap: $gridGap;
+    margin-bottom: 48px;
+  }
+
+  &__button {
+    @include styleFont(400, 16px, 20px, $focusedTextColor);
+    border: 1px solid $focusedTextColor;
+    padding: 16px 48px;
+    background: none;
+  }
+
+  &__button:hover {
+    color: #FFF;
+    background-color: $focusedTextColor;
+  }
+}
+
+.card {
+  background-color: #F8F8F8;
+  min-height: 420px;
+  
+
+  &__img {
+    width: 100%;
+  }
+
+  &__box {
+    height: 420px;
+    width: 100%;
+    position: relative;
+
+    &_hover {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(58, 56, 56, 0.86);
+      @extend %flex-column-center;
+      z-index: 100;
+      animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    }
+  }
+
+  &__box:hover .card__box_hover {
+    display: flex;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 13px;
+    border: solid #ffffff 1px;
+    background: transparent;
+  }
+
+  &__button:hover {
+    background-color: $focusedTextColor;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+  }
+
+  &__link {
+    @include styleFont(400, 13px, normal, $colorText);
+    padding-bottom: 12px;
+  }
+
+  &__text {
+    @include styleFont(300, 14px, normal, $descriptionTextColor);
+    padding-bottom: 18px;
+  }
+
+  &__price {
+    @include styleFont(400, 16px, normal, $focusedTextColor);
   }
 }
 
