@@ -42,12 +42,14 @@ a {
     display: flex;
     justify-content: space-between;
     gap: 40px;
+    align-items: center;
   }
 
   &__rightside {
     display: flex;
     justify-content: space-between;
     gap: 32px;
+    align-items: center;
   }
 
   &__search:hover path,
@@ -415,3 +417,28 @@ a {
   }
 }
 
+.top {
+  min-height: 148px;
+  background: #f8f3f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__heading {
+    @include styleFont(400, 24px, 28px, $focusedTextColor);
+  }
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  @include styleFont(300, 14px, 16px, $descriptionTextColor);
+  &__item {
+
+    &_active {
+      font-weight: 700;
+      color: $focusedTextColor;
+    }
+  }
+
+}

@@ -53,11 +53,13 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 40px;
+  align-items: center;
 }
 .header__rightside {
   display: flex;
   justify-content: space-between;
   gap: 32px;
+  align-items: center;
 }
 .header__search:hover path, .header__burgericon:hover path, .header__usericon:hover path, .header__basketicon:hover path {
   fill: #F16D7F;
@@ -419,4 +421,34 @@ a {
 }
 .footer__social_icon:hover {
   background: #F16D7F;
+}
+
+.top {
+  min-height: 148px;
+  background: #f8f3f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top__heading {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #F16D7F;
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+  color: #9F9F9F;
+}
+.breadcrumb__item_active {
+  font-weight: 700;
+  color: #F16D7F;
 }/*# sourceMappingURL=style.css.map */
