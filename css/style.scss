@@ -189,7 +189,6 @@ a {
 .featured {
   @extend %flex-column-center;
   margin-bottom: 96px;
-  min-height: 1400px;
 
   &__title {
     text-align: center;
@@ -415,3 +414,4 @@ a {
     }
   }
 }
+
