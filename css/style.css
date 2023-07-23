@@ -475,7 +475,6 @@ summary::-webkit-details-marker {
 
 .product {
   margin-bottom: 128px;
-  position: relative;
 }
 .product__card {
   min-height: 600px;
@@ -486,8 +485,7 @@ summary::-webkit-details-marker {
   text-align: center;
   gap: 12px;
   background-color: #FFF;
-  position: absolute;
-  top: 712px;
+  margin-top: -64px;
 }
 .product__subtitle {
   font-style: normal;
@@ -580,7 +578,6 @@ summary::-webkit-details-marker {
   justify-content: space-between;
   width: 100%;
   background-color: #F7F7F7;
-  margin-bottom: 536px;
 }
 .slider__button {
   border: none;
