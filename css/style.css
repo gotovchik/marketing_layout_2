@@ -98,10 +98,13 @@ a {
   color: #6F6E6E;
   margin-left: 20px;
 }
+.burgermenu__link:hover {
+  color: #F16D7F;
+}
 .burgermenu__link_heading {
   color: #F16D7F;
 }
-.burgermenu__link:hover, .burgermenu__link_heading:hover {
+.burgermenu__link_heading:hover {
   text-decoration: underline;
 }
 

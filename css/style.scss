@@ -96,14 +96,16 @@ a {
   &__link {
     color: #6F6E6E;
     margin-left: 20px;
+    &:hover {
+      color: $focusedTextColor;
+    }
 
     &_heading {
       color: $focusedTextColor;
+      &:hover {
+        text-decoration: underline;
+      }
     }
-  }
-
-  &__link:hover, &__link_heading:hover {
-    text-decoration: underline;
   }
 }
 
@@ -218,11 +220,10 @@ a {
     border: 1px solid $focusedTextColor;
     padding: 16px 48px;
     background: none;
-  }
-
-  &__button:hover {
-    color: #FFF;
-    background-color: $focusedTextColor;
+    &:hover {
+      color: #FFF;
+      background-color: $focusedTextColor;
+    }
   }
 }
 
@@ -247,10 +248,10 @@ a {
       @extend %flex-column-center;
       animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
     }
-  }
 
-  &__box:hover .card__box_hover {
-    display: flex;
+    &:hover .card__box_hover {
+      display: flex;
+    }
   }
 
   &__button {
@@ -263,10 +264,9 @@ a {
     padding: 13px;
     border: solid #ffffff 1px;
     background: transparent;
-  }
-
-  &__button:hover {
-    background-color: $focusedTextColor;
+    &:hover {
+      background-color: $focusedTextColor;
+    }
   }
 
   &__content {
@@ -409,10 +409,9 @@ a {
       align-items: center;
       justify-content: center;
       border-radius: 1px;
-    }
-
-    &_icon:hover {
-      background: $focusedTextColor;
+      &:hover {
+        background: $focusedTextColor;
+      }
     }
   }
 }
