@@ -461,18 +461,21 @@ summary::-webkit-details-marker {
 .product {
   @extend %flex-column-center;
   margin-bottom: 128px;
+  position: relative;
 
   &__card {
     @extend %flex-column-center;
     min-height: 600px;
-    z-index: 10;
-    top: -64px;
+    z-index: 1;
     border: 1px solid $elementsColor;
     max-width: 1140px;
     padding: 64px 250px;
     text-align: center;
     gap: 12px;
     background-color: #FFF;
+    position: absolute;
+    top: 712px;
+
   }
 
   &__subtitle {
@@ -553,6 +556,8 @@ summary::-webkit-details-marker {
   justify-content: space-between;
   width: 100%;
   background-color: #F7F7F7;
+  margin-bottom: 536px;
+  
 
   &__button {
     border: none;
