@@ -468,6 +468,9 @@ summary::-webkit-details-marker {
   line-height: 16px;
   color: #9F9F9F;
 }
+.breadcrumb__item {
+  color: #9F9F9F;
+}
 .breadcrumb__item_active {
   font-weight: 700;
   color: #F16D7F;

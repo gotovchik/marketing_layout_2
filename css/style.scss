@@ -449,7 +449,7 @@ summary::-webkit-details-marker {
   gap: 10px;
   @include styleFont(300, 14px, 16px, $descriptionTextColor);
   &__item {
-
+    color: $descriptionTextColor;
     &_active {
       font-weight: 700;
       color: $focusedTextColor;
