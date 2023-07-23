@@ -339,14 +339,14 @@ a {
 }
 
 .subscribe {
-  min-height: 448px;
   display: flex;
-  background-image: url(../img/subscribe-background.png);
-  background-repeat: no-repeat;
-  background-color: #f4f4f4;
-  block-size: cover;
   align-items: center;
   justify-content: space-between;
+  background-image: url(../img/subscribe-background.png);
+  background-size: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 448px;
 }
 .subscribe__heading {
   font-style: normal;
