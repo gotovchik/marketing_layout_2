@@ -441,3 +441,25 @@ a {
   }
 
 }
+
+.product {
+  @extend %flex-column-center
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #F7F7F7;
+
+  &__button {
+    border: none;
+    height: 48px;
+    width: 48px;
+    background-color: $descriptionTextColor;
+    &:hover &_icon path {
+      fill: $focusedTextColor;
+    }
+  }
+}
