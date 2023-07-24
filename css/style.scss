@@ -254,6 +254,9 @@ summary::-webkit-details-marker {
 
   &__details {
     position: relative;
+    &[open] .sort__summary {
+      color: $focusedTextColor;
+    } 
   }
 
   &__summary {
@@ -261,6 +264,10 @@ summary::-webkit-details-marker {
     align-items: center;
     gap: 12px;
     @include styleFont(400, 14px, normal, $descriptionTextColor);
+    &:hover {
+      color: $focusedTextColor;
+    }
+    
   }
 
   &__box {

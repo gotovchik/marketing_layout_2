@@ -254,6 +254,9 @@ summary::-webkit-details-marker {
 .sort__details {
   position: relative;
 }
+.sort__details[open] .sort__summary {
+  color: #F16D7F;
+}
 .sort__summary {
   display: flex;
   align-items: center;
@@ -263,6 +266,9 @@ summary::-webkit-details-marker {
   font-weight: 400;
   line-height: normal;
   color: #9F9F9F;
+}
+.sort__summary:hover {
+  color: #F16D7F;
 }
 .sort__box {
   display: flex;
