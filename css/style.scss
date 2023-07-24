@@ -13,7 +13,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -98,8 +97,9 @@ summary::-webkit-details-marker {
     @include styleFont(400, 14px, normal, #000);
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
     padding: 32px;
-    background-color: #FFF;
+    background-color: $backgroundColor;
     animation: scale-up-ver-top 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    box-sizing: border-box;
   }
 
   &__heading {
@@ -109,7 +109,7 @@ summary::-webkit-details-marker {
   }
 
   &__link {
-    color: #6F6E6E;
+    color: $descriptionTextColor;
     margin-left: 20px;
     &:hover {
       color: $focusedTextColor;
@@ -133,15 +133,165 @@ summary::-webkit-details-marker {
   }    
 }
 
+.top {
+  min-height: 148px;
+  background: #f8f3f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__heading {
+    @include styleFont(400, 24px, 28px, $focusedTextColor);
+  }
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  @include styleFont(300, 14px, 16px, $descriptionTextColor);
+
+  &__item {
+    color: $descriptionTextColor;
+
+    &_active {
+      font-weight: 700;
+      color: $focusedTextColor;
+    }
+  }
+
+}
+
+.filter-sort {
+  height: 132px;
+  display: flex;
+  gap: $gridGap;
+  position: relative;
+  padding-top: 39px;
+  box-sizing: border-box;
+  z-index: 10;
+  
+}
+
+.filter {
+  width: $gridWidth;
+  padding-top: 13px;
+  position: relative;
+  
+  
+
+  &__content {
+    padding: 0px 16px 16px;
+    background-color: $backgroundColor; 
+  }
+
+  &[open] {
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    // animation: scale-up-ver-top 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+
+  &[open] .filter__heading{
+    color: $focusedTextColor;
+  }
+
+  &[open] path {
+    fill: $focusedTextColor;
+  }
+
+  &__heading {
+    @include styleFont(600, 14px, 17px, $colorText);
+
+    &:hover {
+        color: $focusedTextColor;
+      }
+  }
+
+  &__summary {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    padding-left: 16px;
+  }
+
+
+  &__item {
+    margin-top: 16px;
+    &[open] .filter__item_heading {
+        color: $focusedTextColor;
+      } 
+
+    &_heading {
+      @include styleFont(400, 14px, 17px, $descriptionTextColor);
+      border-left: 5px solid $focusedTextColor;
+      border-bottom: 1px solid #EBEBEB;
+      padding: 8px 11px 11px;
+      &:hover {
+        color: $focusedTextColor;
+      }
+      
+    }
+  }
+
+  &__link-box {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding: 24px 16px;
+  }
+
+  &__link {
+    @include styleFont(400, 14px, 17px, $descriptionTextColor);
+    &:hover {
+      color: $focusedTextColor;
+    }
+  }
+}
+
+.sort {
+  padding-top: 13px;
+  display: flex;
+  gap: 16px;
+
+  &__details {
+    position: relative;
+  }
+
+  &__summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    @include styleFont(400, 14px, normal, $descriptionTextColor);
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    left: -9px;
+    top: 22px;
+    position: absolute;
+    background-color: $backgroundColor;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    padding: 7px 30px 11px 9px;
+  }
+
+  &__check {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    @include styleFont(400, 14px, 17px, $descriptionTextColor);
+  }
+}
+
 .logoblock {
   display: flex;
   background-color: #F1E4E6;
   align-items: center;
   gap: 64px;
   margin-bottom: 64px;
+  margin-left: -240px;
   
   &__img {
-    background-color: rgba(113, 103, 105, 0.08);
     height: 751px;
   }
 
@@ -193,7 +343,7 @@ summary::-webkit-details-marker {
 
 
   &__title {
-    @include styleFont(400, 16px, 19px, #FFF);
+    @include styleFont(400, 16px, 19px, $backgroundColor);
     position: absolute;
     &_focused {
       @include styleFont(700, 24px, 29px, $focusedTextColor);
@@ -237,8 +387,119 @@ summary::-webkit-details-marker {
     padding: 16px 48px;
     background: none;
     &:hover {
-      color: #FFF;
+      color: $backgroundColor;
       background-color: $focusedTextColor;
+    }
+  }
+}
+
+.product {
+  @extend %flex-column-center;
+  margin-bottom: 128px;
+
+  &__card {
+    @extend %flex-column-center;
+    min-height: 600px;
+    z-index: 1;
+    border: 1px solid $elementsColor;
+    max-width: 1140px;
+    padding: 64px 250px;
+    text-align: center;
+    gap: 12px;
+    background-color: $backgroundColor;
+    margin-top: -64px
+  }
+
+  &__subtitle {
+    @include styleFont(300, 14px, normal, $focusedTextColor);
+  }
+
+  &__divider {
+    &_title {
+      width: 64px;
+      height: 3px;
+      background-color: $focusedTextColor;
+      border: none;
+    }
+
+    &_filter {
+      width: 640px;
+      height: 1px;
+      border: none;
+      background-color: $elementsColor;
+      margin-bottom: 52px;
+    }
+  }
+
+  &__heading {
+    @include styleFont(300, 18px, normal, $descriptionTextColor);
+    margin-bottom: 36px;
+  }
+
+  &__text {
+    @include styleFont(300, 14px, normal, $descriptionTextColor);
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    @include styleFont(300, 24px, normal, $focusedTextColor);
+    margin-bottom: 52px;
+  }
+
+  &__filter {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+
+  &__summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    @include styleFont(400, 14px, normal, $descriptionTextColor);
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 48px;
+    justify-content: space-between;
+    width: 212px;
+    height: 48px;
+    background-color: $backgroundColor;
+    border: 1px solid $focusedTextColor;
+    @include styleFont(400, 16px, normal, $focusedTextColor);
+
+    &:hover {
+      background-color: $focusedTextColor;
+      color: $backgroundColor;
+
+      & path {
+        fill: $backgroundColor;
+      }
+    }
+  }
+}
+
+.slider {
+  min-height: 778px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #F7F7F7;
+
+
+  &__button {
+    border: none;
+    height: 48px;
+    width: 48px;
+    background-color: $elementsColor;
+
+    &:hover &_icon path {
+      fill: $focusedTextColor;
     }
   }
 }
@@ -274,11 +535,11 @@ summary::-webkit-details-marker {
     display: flex;
     align-items: center;
     gap: 11px;
-    color: #ffffff;
+    color: $backgroundColor;
     font-size: 14px;
     line-height: 17px;
     padding: 13px;
-    border: solid #ffffff 1px;
+    border: solid $backgroundColor 1px;
     background: transparent;
     &:hover {
       background-color: $focusedTextColor;
@@ -383,13 +644,14 @@ summary::-webkit-details-marker {
     background: $elementsColor;
     border-radius: 50px 0 0 50px;
     width: calc(100% - 100px);
+    box-sizing: border-box;
   }
 
   &__button {
     height: 100%;
     border: 0;
     border-radius: 0 50px 50px 0;
-    color: #FFF;
+    color: $backgroundColor;
     width: 100px;
     background-color: $focusedTextColor;
   }
@@ -420,7 +682,7 @@ summary::-webkit-details-marker {
     &_icon {
       width: 32px;
       height: 32px;
-      background: #FFF;
+      background: $backgroundColor;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -432,137 +694,7 @@ summary::-webkit-details-marker {
   }
 }
 
-.top {
-  min-height: 148px;
-  background: #f8f3f4;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  &__heading {
-    @include styleFont(400, 24px, 28px, $focusedTextColor);
-  }
-}
 
-.breadcrumb {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  @include styleFont(300, 14px, 16px, $descriptionTextColor);
-  &__item {
 
-    &_active {
-      font-weight: 700;
-      color: $focusedTextColor;
-    }
-  }
 
-}
 
-.product {
-  @extend %flex-column-center;
-  margin-bottom: 128px;
-
-  &__card {
-    @extend %flex-column-center;
-    min-height: 600px;
-    z-index: 1;
-    border: 1px solid $elementsColor;
-    max-width: 1140px;
-    padding: 64px 250px;
-    text-align: center;
-    gap: 12px;
-    background-color: #FFF;
-    margin-top: -64px
-
-  }
-
-  &__subtitle {
-    @include styleFont(300, 14px, normal, $focusedTextColor);
-  }
-
-  &__divider {
-    &_title {
-      width: 64px;
-      height: 3px;
-      background-color: $focusedTextColor;
-      border: none;
-    }
-
-    &_filter {
-      width: 640px;
-      height: 1px;
-      border: none;
-      background-color: $elementsColor;
-      margin-bottom: 52px;
-    }
-  }
-
-  &__heading {
-    @include styleFont(300, 18px, normal, $descriptionTextColor);
-    margin-bottom: 36px;
-  }
-
-  &__text {
-    @include styleFont(300, 14px, normal, $descriptionTextColor);
-    margin-bottom: 20px;
-  }
-
-  &__price {
-    @include styleFont(300, 24px, normal, $focusedTextColor);
-    margin-bottom: 52px;
-  }
-
-  &__filter {
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-    margin-bottom: 36px;
-  }
-
-  &__summary {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    @include styleFont(400, 14px, normal, $descriptionTextColor);
-  }
-
-  &__button {
-    display: flex;
-    align-items: center;
-    padding-left: 24px;
-    padding-right: 48px;
-    justify-content: space-between;
-    width: 212px;
-    height: 48px;
-    background-color: #FFF;
-    border: 1px solid $focusedTextColor;
-    @include styleFont(400, 16px, normal, $focusedTextColor);
-    &:hover {
-      background-color: $focusedTextColor;
-      color: #FFF;
-      & path {
-        fill: #FFF;
-      }
-    }
-  }
-}
-
-.slider {
-  min-height: 778px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  background-color: #F7F7F7;
-  
-
-  &__button {
-    border: none;
-    height: 48px;
-    width: 48px;
-    background-color: $elementsColor;
-    &:hover &_icon path {
-      fill: $focusedTextColor;
-    }
-  }
-}
