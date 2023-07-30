@@ -13,7 +13,7 @@
     transform-origin: 100% 0%;
   }
 }
-.feedback, .subscribe__box, .service__card, .card__box_hover, .product__card, .product, .featured, .offers__card_big, .offers__card, .offers {
+.feedback, .subscribe__box, .service__card, .card__hover, .product__card, .product, .featured, .offers__card_big, .offers__card, .offers {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -547,15 +547,7 @@ summary::-webkit-details-marker {
   width: 100%;
   position: relative;
 }
-.card__box_hover {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(58, 56, 56, 0.86);
-  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-}
-.card__box_hover:hover .card__box_hover {
+.card__box:hover .card__hover {
   display: flex;
 }
 .card__button {
@@ -599,6 +591,14 @@ summary::-webkit-details-marker {
   font-weight: 400;
   line-height: normal;
   color: #F16D7F;
+}
+.card__hover {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(58, 56, 56, 0.86);
+  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .service {
