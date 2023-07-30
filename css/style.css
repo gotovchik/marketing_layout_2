@@ -148,20 +148,29 @@ summary::-webkit-details-marker {
   color: #F16D7F;
 }
 
-.breadcrumb {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+.breadcrumb__item {
   font-style: normal;
   font-size: 14px;
   font-weight: 300;
   line-height: 16px;
   color: #9F9F9F;
 }
-.breadcrumb__item {
+.breadcrumb__ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+.breadcrumb__li:not(:last-child)::after {
+  content: "/";
+  padding-left: 8px;
+  padding-right: 8px;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
   color: #9F9F9F;
 }
-.breadcrumb__item_active {
+.breadcrumb__li:last-child .breadcrumb__item {
   font-weight: 700;
   color: #F16D7F;
 }
@@ -546,7 +555,7 @@ summary::-webkit-details-marker {
   background: rgba(58, 56, 56, 0.86);
   animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
-.card__box_hover:hover .card__box_hover__box_hover {
+.card__box_hover:hover .card__box_hover {
   display: flex;
 }
 .card__button {

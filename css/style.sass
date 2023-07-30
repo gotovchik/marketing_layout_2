@@ -119,17 +119,22 @@ summary::-webkit-details-marker
     @include styleFont(400, 24px, 28px, $focusedTextColor)
 
 .breadcrumb
-  display: flex
-  justify-content: space-between
-  gap: 10px
-  @include styleFont(300, 14px, 16px, $descriptionTextColor)
-
   &__item
-    color: $descriptionTextColor
+    @include styleFont(300, 14px, 16px, $descriptionTextColor)
+  &__ul
+    list-style-type: none
+    display: flex
+    justify-content: space-between
 
-    &_active
-      font-weight: 700
-      color: $focusedTextColor
+  &__li:not(:last-child)::after
+    content: '/'
+    padding-left: 8px
+    padding-right: 8px
+    @include styleFont(300, 14px, 16px, $descriptionTextColor)
+
+  &__li:last-child .breadcrumb__item
+    font-weight: 700
+    color: $focusedTextColor
 
 .filter-sort
   height: 132px
@@ -432,7 +437,7 @@ summary::-webkit-details-marker
       @extend %flex-column-center
       animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both
 
-      &:hover &__box_hover
+      &:hover .card__box_hover
         display: flex
 
   &__button
