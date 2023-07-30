@@ -12,6 +12,7 @@
 *
   margin: 0
   padding: 0
+  box-sizing: border-box
 
 body
   font-family: 'Lato', sans-serif
@@ -84,7 +85,6 @@ summary::-webkit-details-marker
     padding: 32px
     background-color: $backgroundColor
     animation: scale-up-ver-top 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both
-    box-sizing: border-box
 
   &__heading
     font-weight: 700px
@@ -142,7 +142,6 @@ summary::-webkit-details-marker
   gap: $gridGap
   position: relative
   padding-top: 39px
-  box-sizing: border-box
   z-index: 10
 
 .filter[open] .filter__heading
@@ -468,6 +467,8 @@ summary::-webkit-details-marker
     @extend %flex-column-center
     animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both
 
+.cart
+
 .service
   background-color: $blockColor
   min-height: 340px
@@ -534,7 +535,6 @@ summary::-webkit-details-marker
     background: $elementsColor
     border-radius: 50px 0 0 50px
     width: calc(100% - 100px)
-    box-sizing: border-box
 
   &__button
     height: 100%
