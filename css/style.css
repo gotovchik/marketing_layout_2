@@ -176,6 +176,10 @@ summary::-webkit-details-marker {
   z-index: 10;
 }
 
+.filter[open] .filter__heading {
+  color: #F16D7F;
+}
+
 .filter {
   width: 360px;
   padding-top: 13px;
@@ -187,9 +191,6 @@ summary::-webkit-details-marker {
 }
 .filter[open] {
   box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-}
-.filter[open] .filter__heading {
-  color: #F16D7F;
 }
 .filter[open] path {
   fill: #F16D7F;
@@ -254,7 +255,7 @@ summary::-webkit-details-marker {
 .sort__details {
   position: relative;
 }
-.sort__details[open] .sort__summary {
+.sort__details[open] .sort__details__summary {
   color: #F16D7F;
 }
 .sort__summary {
@@ -545,7 +546,7 @@ summary::-webkit-details-marker {
   background: rgba(58, 56, 56, 0.86);
   animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
-.card__box:hover .card__box_hover {
+.card__box_hover:hover .card__box_hover__box_hover {
   display: flex;
 }
 .card__button {
