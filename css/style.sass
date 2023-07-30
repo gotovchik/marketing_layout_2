@@ -468,6 +468,75 @@ summary::-webkit-details-marker
     animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both
 
 .cart
+  display: flex
+  justify-content: space-between
+  padding-top: 96px
+
+  &__left-side
+    display: flex
+    flex-direction: column
+    gap: 40px
+
+  &__card
+    width: 652px
+    height: 306px
+    display: flex
+    position: relative
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+
+  &__card-img
+    width: 262px
+
+  &__card-description
+    display: flex
+    flex-direction: column
+    gap: 42px
+    padding: 20px 96px 64px 30px
+
+  &__card-heading
+    @include styleFont(400, 24px, normal, $blockColor)
+
+  &__card-ul
+    display: flex
+    flex-direction: column
+    gap: 6px
+
+  &__card-li
+    @include styleFont(400, 22px, normal, #575757)
+    display: flex
+    &_price
+      color: $focusedTextColor
+    &_text
+      color: #6f6f6f
+
+  &__card-input
+    width: 44px
+    height: 25px
+    text-align: center
+    margin-left: 24px
+
+  &__close
+    border: none
+    background: none
+    position: absolute
+    top: 28px
+    right: 22px
+    &:hover path
+      fill: $focusedTextColor
+
+  &__buttons
+    padding-top: 32px
+    display: flex
+    justify-content: space-between
+
+  &__button
+    background: none
+    border: 1px solid $descriptionTextColor
+    @include styleFont(300, 14px, 17px, $colorText)
+    padding: 16px 40px
+    &:hover
+      color: $backgroundColor
+      background-color: $focusedTextColor
 
 .service
   background-color: $blockColor
