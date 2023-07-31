@@ -604,11 +604,17 @@ summary::-webkit-details-marker {
   display: flex;
   justify-content: space-between;
   padding-top: 96px;
+  margin-bottom: 128px;
 }
 .cart__left-side {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+.cart__right-side {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
 }
 .cart__card {
   width: 652px;
@@ -685,6 +691,95 @@ summary::-webkit-details-marker {
 }
 .cart__button:hover {
   color: #FFF;
+  background-color: #F16D7F;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.address__heading {
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+  color: #222;
+}
+.address__input {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 16px;
+  color: #222;
+  height: 44px;
+  width: 360px;
+  padding-left: 16px;
+}
+.address__button {
+  width: 100px;
+  height: 35px;
+  background: none;
+  border: 1px solid #9F9F9F;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 13px;
+  color: #9F9F9F;
+  padding: 10px 14px;
+}
+.address__button:hover {
+  color: #FFF;
+  background-color: #F16D7F;
+}
+
+.total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 360px;
+  height: 214px;
+  background: #F5F3F3;
+  padding: 40px;
+}
+.total__sub {
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+  color: #4A4A4A;
+  margin-bottom: 12px;
+}
+.total__sub_price {
+  padding-left: 20px;
+}
+.total__grand {
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+  color: #222;
+  margin-bottom: 20px;
+}
+.total__grand_price {
+  padding-left: 20px;
+  font-weight: 700;
+  color: #F16D7F;
+}
+.total__divider {
+  width: 275px;
+  color: #E2E2E2;
+  margin-bottom: 16px;
+}
+.total__button {
+  width: 275px;
+  height: 50px;
+  border: none;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 17px;
+  color: #fff;
   background-color: #F16D7F;
 }
 

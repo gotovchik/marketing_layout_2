@@ -471,11 +471,17 @@ summary::-webkit-details-marker
   display: flex
   justify-content: space-between
   padding-top: 96px
+  margin-bottom: 128px
 
   &__left-side
     display: flex
     flex-direction: column
     gap: 40px
+
+  &__right-side
+    display: flex
+    flex-direction: column
+    gap: 56px
 
   &__card
     width: 652px
@@ -537,6 +543,61 @@ summary::-webkit-details-marker
     &:hover
       color: $backgroundColor
       background-color: $focusedTextColor
+
+.address
+  display: flex
+  flex-direction: column
+  gap: 20px
+
+  &__heading
+    @include styleFont(300, 16px, 19px, $blockColor)
+  &__input
+    @include styleFont(300, 13px, 16px, $blockColor)
+    height: 44px
+    width: $gridWidth
+    padding-left: 16px
+  &__button
+    width: 100px
+    height: 35px
+    background: none
+    border: 1px solid $descriptionTextColor
+    @include styleFont(300, 11px, 13px, $descriptionTextColor)
+    padding: 10px 14px
+    &:hover
+      color: $backgroundColor
+      background-color: $focusedTextColor
+
+.total
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  max-width: $gridWidth
+  height: 214px
+  background: #F5F3F3
+  padding: 40px
+  &__sub
+    @include styleFont(400, 11px, 13px, #4A4A4A)
+    margin-bottom: 12px
+    &_price
+      padding-left: 20px
+  &__grand
+    @include styleFont(300, 16px, 19px, $blockColor)
+    margin-bottom: 20px
+    &_price
+      padding-left: 20px
+      font-weight: 700
+      color: $focusedTextColor
+  &__divider
+    width: 275px
+    color: #E2E2E2
+    margin-bottom: 16px
+
+  &__button
+    width: 275px
+    height: 50px
+    border: none
+    @include styleFont(300, 16px, 17px, #fff)
+    background-color: $focusedTextColor
 
 .service
   background-color: $blockColor
