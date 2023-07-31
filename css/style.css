@@ -783,6 +783,21 @@ summary::-webkit-details-marker {
   background-color: #F16D7F;
 }
 
+.registration {
+  display: flex;
+  gap: 128px;
+  padding-top: 64px;
+  margin-bottom: 96px;
+}
+.registration__fields {
+  display: flex;
+  flex-direction: column;
+}
+.registration__name {
+  display: flex;
+  flex-direction: column;
+}
+
 .service {
   background-color: #222;
   min-height: 340px;
