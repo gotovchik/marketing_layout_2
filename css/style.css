@@ -307,10 +307,9 @@ summary::-webkit-details-marker {
   align-items: center;
   gap: 64px;
   margin-bottom: 64px;
-  margin-left: -240px;
 }
-.logoblock__img {
-  height: 751px;
+.logoblock__block-img {
+  background-color: #fff;
 }
 .logoblock__heading {
   font-style: normal;
