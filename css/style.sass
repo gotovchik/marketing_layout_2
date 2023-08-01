@@ -604,16 +604,20 @@ summary::-webkit-details-marker
   gap: 128px
   padding-top: 64px
   margin-bottom: 96px
+
   &__form
     display: flex
     flex-direction: column
     gap: 20px
+
   &__name
     display: flex
     flex-direction: column
     gap: 20px
+
   &__heading
     @include styleFont(300, 16px, 17px, $blockColor)
+
   &__input
     width: $gridWidth
     height: 45px
@@ -621,15 +625,18 @@ summary::-webkit-details-marker
     padding: 16px
     @include styleFont(300, 13px, 16px, #b1b1b1)
     opacity: 0.8
+
   &__gender
     padding-top: 10px
     padding-bottom: 15px
     display: flex
     gap: 20px
     @include styleFont(300, 11px, 11px, $colorText)
+
   &__pass-text
     @include styleFont(300, 13px, normal, #b1b1b1)
     width: $gridWidth
+
   &__button
     margin-top: 20px
     width: 168px
@@ -643,16 +650,20 @@ summary::-webkit-details-marker
     flex-direction: column
     gap: 22px
     @include styleFont(300, 24px, 28px, $colorText)
+
   &__title
     @include styleFont(300, 24px, 28px, $colorText)
+
   &__perks-list
     display: flex
     flex-direction: column
     gap: 16px
     padding-inline-start: 2ch
+
   &__perk
     list-style-image: url(../img/marker-li.svg)
     padding-inline-start: 1ch
+
 .service
   background-color: $blockColor
   min-height: 340px
