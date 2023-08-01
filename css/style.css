@@ -789,13 +789,88 @@ summary::-webkit-details-marker {
   padding-top: 64px;
   margin-bottom: 96px;
 }
-.registration__fields {
+.registration__form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 .registration__name {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+.registration__heading {
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 17px;
+  color: #222;
+}
+.registration__input {
+  width: 360px;
+  height: 45px;
+  border: 1px solid #9F9F9F;
+  padding: 16px;
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 16px;
+  color: #b1b1b1;
+  opacity: 0.8;
+}
+.registration__gender {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  display: flex;
+  gap: 20px;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 11px;
+  color: #000;
+}
+.registration__pass-text {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: normal;
+  color: #b1b1b1;
+  width: 360px;
+}
+.registration__button {
+  margin-top: 20px;
+  width: 168px;
+  height: 50px;
+  border: none;
+  background-color: #F16D7F;
+  color: #FFF;
+}
+.registration__loyalty {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #000;
+}
+.registration__title {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #000;
+}
+.registration__perks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-inline-start: 2ch;
+}
+.registration__perk {
+  list-style-image: url(../img/marker-li.svg);
+  padding-inline-start: 1ch;
 }
 
 .service {
