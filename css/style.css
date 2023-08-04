@@ -1,8 +1,3 @@
-@media screen and (max-width: 1324px) {
-  .burgermenu__box {
-    right: 1%;
-  }
-}
 @keyframes scale-up-ver-top {
   0% {
     transform: scaleY(0.4);
@@ -409,7 +404,7 @@ summary::-webkit-details-marker {
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 30px;
   margin-bottom: 48px;
-  justify-content: center;
+  justify-items: center;
 }
 .featured__button {
   font-style: normal;
@@ -1009,4 +1004,87 @@ summary::-webkit-details-marker {
 }
 .footer__social_icon:hover {
   background: #F16D7F;
+}
+
+@media screen and (max-width: 1324px) {
+  .burgermenu__box {
+    right: 1%;
+  }
+}
+@media (max-width: 1024px) {
+  .featured__box {
+    gap: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .logoblock {
+    gap: 40px;
+  }
+  .logoblock__heading {
+    font-size: 44px;
+  }
+  .logoblock__heading_small {
+    font-size: 24px;
+  }
+  .offers__box {
+    gap: 16px;
+  }
+  .service {
+    justify-content: center;
+  }
+  .service__box {
+    flex-direction: column;
+    gap: 48px;
+    padding-top: 104px;
+    padding-bottom: 104px;
+  }
+  .service__card {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .subscribe {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 694px;
+  }
+}
+@media (max-width: 376px) {
+  .header__usericon {
+    display: none;
+  }
+  .header__basketicon {
+    display: none;
+  }
+  .burgermenu__box {
+    width: 100vw;
+    right: 0;
+  }
+  .top {
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .logoblock {
+    height: 364px;
+  }
+  .logoblock__heading {
+    font-size: 38px;
+  }
+  .logoblock__heading_small {
+    font-size: 20px;
+  }
+  .logoblock__img {
+    display: none;
+  }
+  .offers__box {
+    display: flex;
+    flex-direction: column;
+  }
+  .offers__card_big {
+    height: 112px;
+  }
+  .footer {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    height: 144px;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,6 +1,5 @@
 @import "./_vars"
 @import "./_mixins"
-@import "./_media"
 @import "./_keyframes"
 
 %flex-column-center
@@ -315,7 +314,7 @@ summary::-webkit-details-marker
     grid-template-columns: repeat(auto-fit, minmax($gridWidth, 1fr))
     gap: $gridGap
     margin-bottom: 48px
-    justify-content: center
+    justify-items: center
 
   &__button
     @include styleFont(400, 16px, 20px, $focusedTextColor)
@@ -775,3 +774,67 @@ summary::-webkit-details-marker
       border-radius: 1px
       &:hover
         background: $focusedTextColor
+
+@media screen and (max-width: 1324px)
+  .burgermenu__box
+    right: 1%
+@media (max-width: 1024px)
+  .featured__box
+    gap: 16px
+
+@media (max-width: 768px)
+  .logoblock
+    gap: 40px
+    &__heading
+      font-size: 44px
+      &_small
+        font-size: 24px
+  .offers
+    &__box
+      gap: 16px
+  .service
+    justify-content: center
+
+    &__box
+      flex-direction: column
+      gap: 48px
+      padding-top: 104px
+      padding-bottom: 104px
+    &__card
+      padding-top: 0
+      padding-bottom: 0
+  .subscribe
+    flex-direction: column
+    justify-content: space-around
+    height: 694px
+
+@media (max-width: 376px)
+  .header
+    &__usericon
+      display: none
+    &__basketicon
+      display: none
+  .burgermenu__box
+    width: 100vw
+    right: 0
+  .top
+    justify-content: space-around
+    flex-direction: column
+  .logoblock
+    height: 364px
+    &__heading
+      font-size: 38px
+      &_small
+        font-size: 20px
+    &__img
+      display: none
+  .offers
+    &__box
+      display: flex
+      flex-direction: column
+    &__card_big
+      height: 112px
+  .footer
+    flex-direction: column-reverse
+    justify-content: space-around
+    height: 144px
