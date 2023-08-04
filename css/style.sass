@@ -244,7 +244,7 @@ summary::-webkit-details-marker
   &__block-img
     background-color: #fff
   &__img
-
+    width: 50vw
   &__heading
     @include styleFont(900, 48px, 58px, $blockColor)
     display: flex
@@ -260,10 +260,9 @@ summary::-webkit-details-marker
       color: $focusedTextColor
 
 .offers
-  @extend %flex-column-center
   &__box
     display: grid
-    grid-template-columns: repeat(3, $gridWidth)
+    grid-template-columns: repeat(auto-fit, minmax(232px, 1fr))
     gap: $gridGap
     margin-bottom: 96px
 
@@ -273,14 +272,12 @@ summary::-webkit-details-marker
     position: relative
     height: 260px
     background: rgba(33, 22, 22, 0.7)
-    max-width: 360px
 
   &__card_big
     @extend %flex-column-center
     text-align: center
     position: relative
-    grid-column: 1 / span 3
-    height: 180px
+    grid-column: span 3
     background: rgba(33, 22, 22, 0.7)
     max-width: $containerWidth
 
@@ -291,10 +288,15 @@ summary::-webkit-details-marker
       @include styleFont(700, 24px, 29px, $focusedTextColor)
 
   &__img
+    width: 100%
+    height: 100%
     z-index: -1
+    &_big
+      width: 100%
+      height: 100%
+      z-index: -1
 
 .featured
-  @extend %flex-column-center
   margin-bottom: 96px
 
   &__title
@@ -310,18 +312,73 @@ summary::-webkit-details-marker
 
   &__box
     display: grid
-    grid-template-columns: repeat(3, $gridWidth)
+    grid-template-columns: repeat(auto-fit, minmax($gridWidth, 1fr))
     gap: $gridGap
     margin-bottom: 48px
+    justify-content: center
 
   &__button
     @include styleFont(400, 16px, 20px, $focusedTextColor)
     border: 1px solid $focusedTextColor
     padding: 16px 48px
     background: none
+    display: block
+    margin-left: auto
+    margin-right: auto
     &:hover
       color: $backgroundColor
       background-color: $focusedTextColor
+
+.card
+  max-width: $gridWidth
+  background-color: #F8F8F8
+  &__img
+    width: 100%
+
+  &__box
+    min-height: 420px
+    max-width: 100%
+    position: relative
+    &:hover .card__hover
+      display: flex
+
+  &__button
+    display: flex
+    align-items: center
+    gap: 11px
+    color: $backgroundColor
+    font-size: 14px
+    line-height: 17px
+    padding: 13px
+    border: solid $backgroundColor 1px
+    background: transparent
+    &:hover
+      background-color: $focusedTextColor
+
+  &__content
+    display: flex
+    flex-direction: column
+    padding: 24px 16px
+
+  &__link
+    @include styleFont(400, 13px, normal, $colorText)
+    padding-bottom: 12px
+
+  &__text
+    @include styleFont(300, 14px, normal, $descriptionTextColor)
+    padding-bottom: 18px
+
+  &__price
+    @include styleFont(400, 16px, normal, $focusedTextColor)
+
+  &__hover
+    display: none
+    position: absolute
+    width: 100%
+    height: 100%
+    background: rgba(58, 56, 56, 0.86)
+    @extend %flex-column-center
+    animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both
 
 .product
   @extend %flex-column-center
@@ -416,57 +473,6 @@ summary::-webkit-details-marker
     &:hover &_icon path
       fill: $focusedTextColor
 
-.card
-  max-width: 360px
-  background-color: #F8F8F8
-  &__img
-    width: 100%
-
-  &__box
-    height: 420px
-    width: 100%
-    position: relative
-    &:hover .card__hover
-      display: flex
-
-  &__button
-    display: flex
-    align-items: center
-    gap: 11px
-    color: $backgroundColor
-    font-size: 14px
-    line-height: 17px
-    padding: 13px
-    border: solid $backgroundColor 1px
-    background: transparent
-    &:hover
-      background-color: $focusedTextColor
-
-  &__content
-    display: flex
-    flex-direction: column
-    padding: 24px 16px
-
-  &__link
-    @include styleFont(400, 13px, normal, $colorText)
-    padding-bottom: 12px
-
-  &__text
-    @include styleFont(300, 14px, normal, $descriptionTextColor)
-    padding-bottom: 18px
-
-  &__price
-    @include styleFont(400, 16px, normal, $focusedTextColor)
-
-  &__hover
-    display: none
-    position: absolute
-    width: 100%
-    height: 100%
-    background: rgba(58, 56, 56, 0.86)
-    @extend %flex-column-center
-    animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both
-
 .cart
   display: flex
   justify-content: space-between
@@ -552,7 +558,7 @@ summary::-webkit-details-marker
   &__heading
     @include styleFont(300, 16px, 19px, $blockColor)
   &__input
-    @include styleFont(300, 13px, 16px, $blockColor)
+    @include styleFont(300, 12px, 16px, $blockColor)
     height: 44px
     width: $gridWidth
     padding-left: 16px
@@ -561,7 +567,7 @@ summary::-webkit-details-marker
     height: 35px
     background: none
     border: 1px solid $descriptionTextColor
-    @include styleFont(300, 11px, 13px, $descriptionTextColor)
+    @include styleFont(300, 12px, 13px, $descriptionTextColor)
     padding: 10px 14px
     &:hover
       color: $backgroundColor
@@ -576,7 +582,7 @@ summary::-webkit-details-marker
   background: #F5F3F3
   padding: 40px
   &__sub
-    @include styleFont(400, 11px, 13px, #4A4A4A)
+    @include styleFont(400, 12px, 13px, #4A4A4A)
     margin-bottom: 12px
     &_price
       padding-left: 20px
@@ -623,7 +629,7 @@ summary::-webkit-details-marker
     height: 45px
     border: 1px solid $descriptionTextColor
     padding: 16px
-    @include styleFont(300, 13px, 16px, #b1b1b1)
+    @include styleFont(300, 12px, 16px, #b1b1b1)
     opacity: 0.8
 
   &__gender
@@ -631,10 +637,10 @@ summary::-webkit-details-marker
     padding-bottom: 15px
     display: flex
     gap: 20px
-    @include styleFont(300, 11px, 11px, $colorText)
+    @include styleFont(300, 12px, 11px, $colorText)
 
   &__pass-text
-    @include styleFont(300, 13px, normal, #b1b1b1)
+    @include styleFont(300, 12px, normal, #b1b1b1)
     width: $gridWidth
 
   &__button
