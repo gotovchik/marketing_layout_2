@@ -382,6 +382,10 @@ summary::-webkit-details-marker
 .product
   @extend %flex-column-center
   margin-bottom: 128px
+  max-width: 100vw
+
+  &__image
+    max-width: 70vw
 
   &__card
     @extend %flex-column-center
@@ -389,7 +393,6 @@ summary::-webkit-details-marker
     z-index: 1
     border: 1px solid $elementsColor
     max-width: 1140px
-    padding: 64px 250px
     text-align: center
     gap: 12px
     background-color: $backgroundColor
@@ -406,7 +409,7 @@ summary::-webkit-details-marker
       border: none
 
     &_filter
-      width: 640px
+      width: 50%
       height: 1px
       border: none
       background-color: $elementsColor
@@ -418,6 +421,7 @@ summary::-webkit-details-marker
 
   &__text
     @include styleFont(300, 14px, normal, $descriptionTextColor)
+    width: 70%
     margin-bottom: 20px
 
   &__price
@@ -606,9 +610,11 @@ summary::-webkit-details-marker
 
 .registration
   display: flex
-  gap: 128px
+  justify-content: space-between
   padding-top: 64px
   margin-bottom: 96px
+  gap: 128px
+  max-width: 1140px
 
   &__form
     display: flex
@@ -775,12 +781,36 @@ summary::-webkit-details-marker
       &:hover
         background: $focusedTextColor
 
-@media screen and (max-width: 1324px)
+@media (max-width: 1324px)
   .burgermenu__box
     right: 1%
+@media (max-width: 1140px)
+  .product__card
+    max-width: 100vw
+  .registration
+    width: 96vw
 @media (max-width: 1024px)
   .featured__box
     gap: 16px
+  .cart
+    flex-direction: column
+    align-items: center
+
+    &__buttons
+      margin-bottom: 64px
+      justify-content: space-around
+    &__right-side
+      flex-direction: row
+      justify-content: space-around
+      gap: 16px
+    &__card
+      width: 96vw
+  .registration
+    gap: 24px
+    &__loyalty
+      font-size: 16px
+    &__title
+      font-size: 16px
 
 @media (max-width: 768px)
   .logoblock
@@ -789,12 +819,13 @@ summary::-webkit-details-marker
       font-size: 44px
       &_small
         font-size: 24px
+
   .offers
     &__box
       gap: 16px
+
   .service
     justify-content: center
-
     &__box
       flex-direction: column
       gap: 48px
@@ -803,11 +834,18 @@ summary::-webkit-details-marker
     &__card
       padding-top: 0
       padding-bottom: 0
+
   .subscribe
     flex-direction: column
     justify-content: space-around
     height: 694px
 
+@media (max-width: 740px)
+  .cart
+    &__right-side
+      flex-direction: column
+  .registration
+    flex-wrap: wrap
 @media (max-width: 376px)
   .header
     &__usericon
@@ -828,6 +866,7 @@ summary::-webkit-details-marker
         font-size: 20px
     &__img
       display: none
+
   .offers
     &__box
       display: flex
